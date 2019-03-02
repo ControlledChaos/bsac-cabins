@@ -2,8 +2,8 @@
 
 Cabins plugin for Big Santa Anita Canyon sites.
 
-![WordPress Compatible](https://img.shields.io/badge/WordPress-Compatible-0073aa.svg?style=flat-square)
 ![ClassicPress Compatible](https://img.shields.io/badge/ClassicPress-Compatible-03768e.svg?style=flat-square)
+![WordPress Compatible](https://img.shields.io/badge/WordPress-Compatible-0073aa.svg?style=flat-square)
 ![PHP tested on version 7.2](https://img.shields.io/badge/PHP-tested%207.2-8892bf.svg?style=flat-square)
 ![ACF Pro Ready](https://img.shields.io/badge/ACF%20Pro-ready-00d3ae.svg?style=flat-square)
 
