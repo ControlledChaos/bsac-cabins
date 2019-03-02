@@ -59,19 +59,9 @@ final class Init {
 	 *
 	 * @since  1.0.0
 	 * @access private
-	 * @return self
+	 * @return void The constructor is empty.
 	 */
-	private function __construct() {
-
-		// Remove the Draconian capital P filter.
-		remove_filter( 'the_title', 'capital_P_dangit', 11 );
-		remove_filter( 'the_content', 'capital_P_dangit', 11 );
-		remove_filter( 'comment_text', 'capital_P_dangit', 31 );
-
-		// Load classes to extend plugins.
-		add_action( 'init', [ $this, 'plugin_support' ] );
-
-	}
+	private function __construct() {}
 
 	/**
 	 * Load the required dependencies for this plugin.
@@ -94,54 +84,8 @@ final class Init {
 		// Various media and media library functionality.
 		require_once BSACC_PATH . 'includes/media/class-media.php';
 
-		/**
-		 * Register custom editor blocks.
-		 *
-		 * @todo Remove conditional statement when Gutenberg is in core?
-		 */
-		if ( bsacc_acf_pro() ) {
-			$editor = get_field( 'bsacc_classic_editor', 'option' );
-		} else {
-			$editor = get_option( 'bsacc_classic_editor' );
-		}
-		if ( ( bsacc_classicpress() || bsacc_new_cms() ) && ! $editor || is_plugin_active( 'gutenberg/gutenberg.php' ) ) {
-			require_once BSACC_PATH . 'includes/editor-blocks/class-register-block-types.php';
-		}
-
 		// Post types and taxonomies.
 		require_once BSACC_PATH . 'includes/post-types-taxes/class-post-type-tax.php';
-
-		// User funtionality.
-		require_once BSACC_PATH . 'includes/users/class-users.php';
-
-		// Dev and maintenance tools.
-		require_once BSACC_PATH . 'includes/tools/class-tools.php';
-
-	}
-
-	/**
-	 * Load classes to extend plugins.
-	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @return void
-	 */
-	public function plugin_support() {
-
-		// Add Advanced Custom Fields Support.
-		if ( bsacc_acf() ) {
-			include_once BSACC_PATH . 'includes/acf/class-extend-acf.php';
-		}
-
-		// Add Beaver Builder support.
-		if ( class_exists( 'FLBuilder' ) ) {
-			include_once BSACC_PATH . 'includes/beaver/class-beaver-builder.php';
-		}
-
-		// Add Elementor support.
-		if ( class_exists( '\Elementor\Plugin' ) ) {
-			include_once BSACC_PATH . 'includes/elementor/class-elementor.php';
-		}
 
 	}
 

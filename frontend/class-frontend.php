@@ -7,12 +7,6 @@
  *
  * @since      1.0.0
  * @author     Greg Sweet <greg@ccdzine.com>
- *
- * @link       Slick       https://github.com/kenwheeler/slick
- * @link       Tabslet     https://github.com/vdw/Tabslet
- * @link       Sticky-kit  https://github.com/leafo/sticky-kit
- * @link       Tooltipster https://github.com/iamceege/tooltipster
- * @link       Fancybox    http://fancyapps.com/fancybox/3/
  */
 
 namespace BSAC_Cabins\Frontend;
@@ -48,7 +42,7 @@ class Frontend {
 			$instance = new self;
 
 			// Frontend dependencies
-			$instance->dependencies();
+			// $instance->dependencies();
 
 		}
 
@@ -66,20 +60,11 @@ class Frontend {
 	 */
 	public function __construct() {
 
-		// Deregister Dashicons for users not logged in.
-		add_action( 'wp_enqueue_scripts', [ $this, 'deregister_dashicons' ] );
+		// Enqueue the stylesheets for the front end.
+		add_action( 'enqueue_scripts', [ $this, 'enqueue_styles' ] );
 
-		// Get inline options.
-		$jquery  = get_option( 'bsacc_inline_jquery' );
-
-		// Inline jQuery.
-		if ( $jquery ) {
-			add_action( 'wp_enqueue_scripts', [ $this, 'deregister_jquery' ] );
-			add_action( 'wp_footer', [ $this, 'get_jquery' ], 1 );
-		}
-
-		// Add Fancybox attributes to attachment page image link.
-		add_action( 'wp_footer', [ $this, 'attachment_fancybox' ] );
+		// Enqueue the JavaScript for the front end.
+		add_action( 'enqueue_scripts', [ $this, 'enqueue_scripts' ] );
 
 	}
 
@@ -90,109 +75,37 @@ class Frontend {
 	 * @access public
 	 * @return void
 	 */
-	public function dependencies() {
-
-		// Get inline options.
-		$scripts = get_option( 'bsacc_inline_scripts' );
-		$styles  = get_option( 'bsacc_inline_styles' );
-
-		// Add styles inline if option selected.
-		if ( $styles ) {
-			require_once BSACC_PATH . 'frontend/class-styles-inline.php';
-
-		// Otherwise enqueue styles.
-		} else {
-			require_once BSACC_PATH . 'frontend/class-styles-enqueue.php';
-		}
-
-		// Add scripts inline if option selected.
-		if ( $scripts ) {
-			require_once BSACC_PATH . 'frontend/class-scripts-inline.php';
-
-		// Otherwise enqueue scripts.
-		} else {
-			require_once BSACC_PATH . 'frontend/class-scripts-enqueue.php';
-		}
-
-		// Clean up some scripts in the `head` section.
-		require_once BSACC_PATH . 'frontend/class-head-scripts.php';
-
-		// Meta tags for SEO.
-		include_once BSACC_PATH . 'frontend/meta-tags/class-meta-tags.php';
-
-	}
+	public function dependencies() {}
 
 	/**
-	 * Deregister Dashicons for users not logged in.
+	 * Enqueue the stylesheets for the front end.
 	 *
 	 * @since  1.0.0
 	 * @access public
 	 * @return void
 	 */
-	public function deregister_dashicons() {
+	public function enqueue_styles() {
 
-		if ( ! is_user_logged_in() ) {
-			wp_deregister_style( 'dashicons' );
-		}
+		/**
+		 * Enqueue the front end styles.
+		 *
+		 * @since 1.0.0
+		 */
+		wp_enqueue_style( BSACC_ADMIN_SLUG . '-frontend', BSACC_URL . 'frontend/assets/css/frontend.min.css', [], BSACC_VERSION, 'all' );
 
 	}
 
 	/**
-	 * Deregister jQuery if inline is option selected.
+	 * Enqueue the JavaScript for the admin area.
 	 *
 	 * @since  1.0.0
 	 * @access public
 	 * @return void
 	 */
-	public function deregister_jquery() {
+	public function enqueue_scripts() {
 
-		if ( ! is_customize_preview() ) {
-
-			wp_deregister_script( 'jquery' );
-
-		}
-
-	}
-
-	/**
-	 * Add jQuery inline if option selected.
-	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @return string
-	 */
-	public function get_jquery() {
-
-		if ( ! is_customize_preview() ) {
-
-			$jquery = file_get_contents( BSACC_PATH . '/assets/js/jquery.min.js' );
-
-			echo '<!-- jQuery --><script>' . $jquery . '</script>';
-
-		}
-
-	}
-
-	/**
-	 * Add Fancybox attributes to attachment page image link.
-	 *
-	 * You may want to minimize the script for production sites.
-	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @return string
-	 */
-	public function attachment_fancybox() {
-
-		if ( is_attachment() && get_option( 'bsacc_enqueue_fancybox_script' ) ) { ?>
-
-			<script>
-			jQuery(document).ready(function() {
-				jQuery( 'p.attachment > a' ).attr( 'data-fancybox', '' );
-			});
-			</script>
-
-		<?php }
+		// Enqueue scripts for backend functionality of this plugin.
+		wp_enqueue_script( BSACC_ADMIN_SLUG . '-frontend', BSACC_URL . 'frontend/assets/js/frontend.min.js', [ 'jquery' ], BSACC_VERSION, true );
 
 	}
 
