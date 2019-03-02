@@ -339,26 +339,6 @@ function bsacc_acf_pro() {
 }
 
 /**
- * Check for Advanced Custom Fields options page.
- *
- * @since  1.0.0
- * @access public
- * @return bool Returns true if ACF 4.0 free plus the
- *              Options Page addon or Pro plugin is active.
- */
-function bsacc_acf_options() {
-
-	if ( class_exists( 'acf_pro' ) ) {
-		return true;
-	} elseif ( ( class_exists( 'acf' ) && class_exists( 'acf_options_page' ) ) ) {
-		return true;
-	} else {
-		return false;
-	}
-
-}
-
-/**
  * Add an admin error notice if Advanced Custom Fields Pro is not active.
  *
  * @since  1.0.0
