@@ -50,55 +50,49 @@ final class Taxes_Register {
     public function register() {
 
         /**
-         * Taxonomy: Sample taxonomy (Taxonomy).
-         *
-         * Renaming:
-         * Search case "Taxonomy" and replace with your post type singular name.
-         * Search case "Taxonomies" and replace with your post type plural name.
-         * Search case "bsacc_taxonomy" and replace with your taxonomy database name.
-         * Search case "taxonomies" and replace with your taxonomy permalink slug.
+         * Taxonomy: Sale Status.
          */
 
         $labels = [
-            'name'                       => __( 'Taxonomies', 'bsac-cabins' ),
-            'singular_name'              => __( 'Taxonomy', 'bsac-cabins' ),
-            'menu_name'                  => __( 'Taxonomy', 'bsac-cabins' ),
-            'all_items'                  => __( 'All Taxonomies', 'bsac-cabins' ),
-            'edit_item'                  => __( 'Edit Taxonomy', 'bsac-cabins' ),
-            'view_item'                  => __( 'View Taxonomy', 'bsac-cabins' ),
-            'update_item'                => __( 'Update Taxonomy', 'bsac-cabins' ),
-            'add_new_item'               => __( 'Add New Taxonomy', 'bsac-cabins' ),
-            'new_item_name'              => __( 'New Taxonomy', 'bsac-cabins' ),
-            'parent_item'                => __( 'Parent Taxonomy', 'bsac-cabins' ),
-            'parent_item_colon'          => __( 'Parent Taxonomy', 'bsac-cabins' ),
-            'popular_items'              => __( 'Popular Taxonomies', 'bsac-cabins' ),
-            'separate_items_with_commas' => __( 'Separate Taxonomies with commas', 'bsac-cabins' ),
-            'add_or_remove_items'        => __( 'Add or Remove Taxonomies', 'bsac-cabins' ),
-            'choose_from_most_used'      => __( 'Choose from the most used Taxonomies', 'bsac-cabins' ),
-            'not_found'                  => __( 'No Taxonomies Found', 'bsac-cabins' ),
-            'no_terms'                   => __( 'No Taxonomies', 'bsac-cabins' ),
-            'items_list_navigation'      => __( 'Taxonomies List Navigation', 'bsac-cabins' ),
-            'items_list'                 => __( 'Taxonomies List', 'bsac-cabins' )
+            'name'                       => __( 'Sale Statuses', 'bsac-cabins' ),
+            'singular_name'              => __( 'Sale Status', 'bsac-cabins' ),
+            'menu_name'                  => __( 'Sale Status', 'bsac-cabins' ),
+            'all_items'                  => __( 'All Sale Statuses', 'bsac-cabins' ),
+            'edit_item'                  => __( 'Edit Sale Status', 'bsac-cabins' ),
+            'view_item'                  => __( 'View Sale Status', 'bsac-cabins' ),
+            'update_item'                => __( 'Update Sale Status', 'bsac-cabins' ),
+            'add_new_item'               => __( 'Add New Sale Status', 'bsac-cabins' ),
+            'new_item_name'              => __( 'New Sale Status', 'bsac-cabins' ),
+            'parent_item'                => __( 'Parent Sale Status', 'bsac-cabins' ),
+            'parent_item_colon'          => __( 'Parent Sale Status', 'bsac-cabins' ),
+            'popular_items'              => __( 'Popular Sale Statuses', 'bsac-cabins' ),
+            'separate_items_with_commas' => __( 'Separate Sale Statuses with commas', 'bsac-cabins' ),
+            'add_or_remove_items'        => __( 'Add or Remove Sale Statuses', 'bsac-cabins' ),
+            'choose_from_most_used'      => __( 'Choose from the most used Sale Statuses', 'bsac-cabins' ),
+            'not_found'                  => __( 'No Sale Statuses Found', 'bsac-cabins' ),
+            'no_terms'                   => __( 'No Sale Statuses', 'bsac-cabins' ),
+            'items_list_navigation'      => __( 'Sale Statuses List Navigation', 'bsac-cabins' ),
+            'items_list'                 => __( 'Sale Statuses List', 'bsac-cabins' )
         ];
 
         $options = [
-            'label'              => __( 'Taxonomies', 'bsac-cabins' ),
+            'label'              => __( 'Sale Statuses', 'bsac-cabins' ),
             'labels'             => $labels,
             'public'             => true,
             'hierarchical'       => false,
-            'label'              => 'Taxonomies',
+            'label'              => 'Sale Statuses',
             'show_ui'            => true,
             'show_in_menu'       => true,
             'show_in_nav_menus'  => true,
             'query_var'          => true,
             'rewrite'            => [
-                'slug'         => 'taxonomies',
+                'slug'         => 'sale-status',
                 'with_front'   => true,
                 'hierarchical' => false,
             ],
             'show_admin_column'  => true,
             'show_in_rest'       => true,
-            'rest_base'          => 'taxonomies',
+            'rest_base'          => 'sale-status',
             'show_in_quick_edit' => true
         ];
 
@@ -106,9 +100,9 @@ final class Taxes_Register {
          * Register the taxonomy
          */
         register_taxonomy(
-            'bsacc_taxonomy',
+            'bsacc_status',
             [
-                'bsacc_post_type' // Change to your post type name.
+                'bsacc_forsale'
             ],
             $options
         );

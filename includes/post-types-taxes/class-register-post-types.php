@@ -7,8 +7,6 @@
  *
  * @since      1.0.0
  * @author     Greg Sweet <greg@ccdzine.com>
- *
- * @link       https://codex.wordpress.org/Function_Reference/register_post_type
  */
 
 namespace BSAC_Cabins\Includes\Post_Types_Taxes;
@@ -43,10 +41,6 @@ final class Post_Types_Register {
     /**
      * Register custom post types.
      *
-     * Note for WordPress 5.0 or greater:
-     * If you want your post type to adopt the block edit_form_image_editor
-     * rather than using the classic editor then set `show_in_rest` to `true`.
-     *
      * @since  1.0.0
 	 * @access public
 	 * @return void
@@ -54,56 +48,52 @@ final class Post_Types_Register {
     public function register() {
 
         /**
-         * Post Type: Sample custom post (Custom Posts).
+         * Post Type: Cabins
          *
-         * Renaming:
-         * Search case "Custom Post" and replace with your post type capitalized name.
-         * Search case "custom post" and replace with your post type lowercase name.
-         * Search case "bsacc_post_type" and replace with your post type database name.
-         * Search case "custom-posts" and replace with your post type archive permalink slug.
+         * General documentaion of the cabins.
          */
 
         $labels = [
-            'name'                  => __( 'Custom Posts', 'bsac-cabins' ),
-            'singular_name'         => __( 'Custom Post', 'bsac-cabins' ),
-            'menu_name'             => __( 'Custom Posts', 'bsac-cabins' ),
-            'all_items'             => __( 'All Custom Posts', 'bsac-cabins' ),
+            'name'                  => __( 'Cabins', 'bsac-cabins' ),
+            'singular_name'         => __( 'Cabin', 'bsac-cabins' ),
+            'menu_name'             => __( 'Cabins', 'bsac-cabins' ),
+            'all_items'             => __( 'All Cabins', 'bsac-cabins' ),
             'add_new'               => __( 'Add New', 'bsac-cabins' ),
-            'add_new_item'          => __( 'Add New Custom Post', 'bsac-cabins' ),
-            'edit_item'             => __( 'Edit Custom Post', 'bsac-cabins' ),
-            'new_item'              => __( 'New Custom Post', 'bsac-cabins' ),
-            'view_item'             => __( 'View Custom Post', 'bsac-cabins' ),
-            'view_items'            => __( 'View Custom Posts', 'bsac-cabins' ),
-            'search_items'          => __( 'Search Custom Posts', 'bsac-cabins' ),
-            'not_found'             => __( 'No Custom Posts Found', 'bsac-cabins' ),
-            'not_found_in_trash'    => __( 'No Custom Posts Found in Trash', 'bsac-cabins' ),
-            'parent_item_colon'     => __( 'Parent Custom Post', 'bsac-cabins' ),
-            'featured_image'        => __( 'Featured image for this custom post', 'bsac-cabins' ),
-            'set_featured_image'    => __( 'Set featured image for this custom post', 'bsac-cabins' ),
-            'remove_featured_image' => __( 'Remove featured image for this custom post', 'bsac-cabins' ),
-            'use_featured_image'    => __( 'Use as featured image for this custom post', 'bsac-cabins' ),
-            'archives'              => __( 'Custom Post archives', 'bsac-cabins' ),
-            'insert_into_item'      => __( 'Insert into Custom Post', 'bsac-cabins' ),
-            'uploaded_to_this_item' => __( 'Uploaded to this Custom Post', 'bsac-cabins' ),
-            'filter_items_list'     => __( 'Filter Custom Posts', 'bsac-cabins' ),
-            'items_list_navigation' => __( 'Custom Posts list navigation', 'bsac-cabins' ),
-            'items_list'            => __( 'Custom Posts List', 'bsac-cabins' ),
-            'attributes'            => __( 'Custom Post Attributes', 'bsac-cabins' ),
-            'parent_item_colon'     => __( 'Parent Custom Post', 'bsac-cabins' ),
+            'add_new_item'          => __( 'Add New Cabin', 'bsac-cabins' ),
+            'edit_item'             => __( 'Edit Cabin', 'bsac-cabins' ),
+            'new_item'              => __( 'New Cabin', 'bsac-cabins' ),
+            'view_item'             => __( 'View Cabin', 'bsac-cabins' ),
+            'view_items'            => __( 'View Cabins', 'bsac-cabins' ),
+            'search_items'          => __( 'Search Cabins', 'bsac-cabins' ),
+            'not_found'             => __( 'No Cabins Found', 'bsac-cabins' ),
+            'not_found_in_trash'    => __( 'No Cabins Found in Trash', 'bsac-cabins' ),
+            'parent_item_colon'     => __( 'Parent Cabin', 'bsac-cabins' ),
+            'featured_image'        => __( 'Featured image for this cabin', 'bsac-cabins' ),
+            'set_featured_image'    => __( 'Set featured image for this cabin', 'bsac-cabins' ),
+            'remove_featured_image' => __( 'Remove featured image for this cabin', 'bsac-cabins' ),
+            'use_featured_image'    => __( 'Use as featured image for this cabin', 'bsac-cabins' ),
+            'archives'              => __( 'Cabins archives', 'bsac-cabins' ),
+            'insert_into_item'      => __( 'Insert into Cabin', 'bsac-cabins' ),
+            'uploaded_to_this_item' => __( 'Uploaded to this Cabin', 'bsac-cabins' ),
+            'filter_items_list'     => __( 'Filter Cabins', 'bsac-cabins' ),
+            'items_list_navigation' => __( 'Cabins list navigation', 'bsac-cabins' ),
+            'items_list'            => __( 'Cabins List', 'bsac-cabins' ),
+            'attributes'            => __( 'Cabin Attributes', 'bsac-cabins' ),
+            'parent_item_colon'     => __( 'Parent Cabin', 'bsac-cabins' ),
         ];
 
         // Apply a filter to labels for customization.
-        $labels = apply_filters( 'bsacc_post_type_labels', $labels );
+        $labels = apply_filters( 'bsacc_cabins_labels', $labels );
 
         $options = [
-            'label'               => __( 'Custom Posts', 'bsac-cabins' ),
+            'label'               => __( 'Cabins', 'bsac-cabins' ),
             'labels'              => $labels,
             'description'         => __( 'Custom post type description.', 'bsac-cabins' ),
             'public'              => true,
             'publicly_queryable'  => true,
             'show_ui'             => true,
             'show_in_rest'        => false,
-            'rest_base'           => 'bsacc_post_type_rest_api',
+            'rest_base'           => 'bsacc_cabins_rest_api',
             'has_archive'         => true,
             'show_in_menu'        => true,
             'exclude_from_search' => false,
@@ -111,12 +101,12 @@ final class Post_Types_Register {
             'map_meta_cap'        => true,
             'hierarchical'        => false,
             'rewrite'             => [
-                'slug'       => 'custom-posts',
+                'slug'       => 'cabins',
                 'with_front' => true
             ],
-            'query_var'           => 'bsacc_post_type',
+            'query_var'           => 'bsacc_cabins',
             'menu_position'       => 5,
-            'menu_icon'           => 'dashicons-admin-post',
+            'menu_icon'           => 'dashicons-admin-home',
             'supports'            => [
                 'title',
                 'editor',
@@ -132,21 +122,109 @@ final class Post_Types_Register {
             ],
             'taxonomies'          => [
                 'category',
-                'post_tag',
-                'bsacc_taxonomy' // Change to your custom taxonomy name.
+                'post_tag'
             ],
         ];
 
         // Apply a filter to arguments for customization.
-        $options = apply_filters( 'bsacc_post_type_args', $options );
+        $options = apply_filters( 'bsacc_cabins_args', $options );
 
         /**
          * Register the post type
-         *
-         * Maximum 20 characters, cannot contain capital letters or spaces.
          */
         register_post_type(
-            'bsacc_post_type',
+            'bsacc_cabins',
+            $options
+        );
+
+        /**
+         * Post Type: Cabins For Sale
+         *
+         * Listings of cabins for sale and sold.
+         */
+
+        $labels = [
+            'name'                  => __( 'Cabins For Sale', 'bsac-cabins' ),
+            'singular_name'         => __( 'Cabin For Sale', 'bsac-cabins' ),
+            'menu_name'             => __( 'Cabins For Sale', 'bsac-cabins' ),
+            'all_items'             => __( 'All Cabins For Sale', 'bsac-cabins' ),
+            'add_new'               => __( 'Add New', 'bsac-cabins' ),
+            'add_new_item'          => __( 'Add New Cabin For Sale', 'bsac-cabins' ),
+            'edit_item'             => __( 'Edit Cabin For Sale', 'bsac-cabins' ),
+            'new_item'              => __( 'New Cabin', 'bsac-cabins' ),
+            'view_item'             => __( 'View Cabin', 'bsac-cabins' ),
+            'view_items'            => __( 'View Cabins For Sale', 'bsac-cabins' ),
+            'search_items'          => __( 'Search Cabins For Sale', 'bsac-cabins' ),
+            'not_found'             => __( 'No Cabins For Sale Found', 'bsac-cabins' ),
+            'not_found_in_trash'    => __( 'No Cabins For Sale Found in Trash', 'bsac-cabins' ),
+            'parent_item_colon'     => __( 'Parent Cabin', 'bsac-cabins' ),
+            'featured_image'        => __( 'Featured image for this cabin', 'bsac-cabins' ),
+            'set_featured_image'    => __( 'Set featured image for this cabin', 'bsac-cabins' ),
+            'remove_featured_image' => __( 'Remove featured image for this cabin', 'bsac-cabins' ),
+            'use_featured_image'    => __( 'Use as featured image for this cabin', 'bsac-cabins' ),
+            'archives'              => __( 'Cabins For Sale archives', 'bsac-cabins' ),
+            'insert_into_item'      => __( 'Insert into Cabin', 'bsac-cabins' ),
+            'uploaded_to_this_item' => __( 'Uploaded to this Cabin', 'bsac-cabins' ),
+            'filter_items_list'     => __( 'Filter Cabins For Sale', 'bsac-cabins' ),
+            'items_list_navigation' => __( 'Cabins For Sale list navigation', 'bsac-cabins' ),
+            'items_list'            => __( 'Cabins For Sale List', 'bsac-cabins' ),
+            'attributes'            => __( 'Cabin Attributes', 'bsac-cabins' ),
+            'parent_item_colon'     => __( 'Parent Cabin', 'bsac-cabins' ),
+        ];
+
+        // Apply a filter to labels for customization.
+        $labels = apply_filters( 'bsacc_forsale_labels', $labels );
+
+        $options = [
+            'label'               => __( 'Cabins For Sale', 'bsac-cabins' ),
+            'labels'              => $labels,
+            'description'         => __( 'Custom post type description.', 'bsac-cabins' ),
+            'public'              => true,
+            'publicly_queryable'  => true,
+            'show_ui'             => true,
+            'show_in_rest'        => false,
+            'rest_base'           => 'bsacc_forsale_rest_api',
+            'has_archive'         => true,
+            'show_in_menu'        => true,
+            'exclude_from_search' => false,
+            'capability_type'     => 'post',
+            'map_meta_cap'        => true,
+            'hierarchical'        => false,
+            'rewrite'             => [
+                'slug'       => 'cabins-for-sale',
+                'with_front' => true
+            ],
+            'query_var'           => 'bsacc_forsale',
+            'menu_position'       => 5,
+            'menu_icon'           => 'dashicons-flag',
+            'supports'            => [
+                'title',
+                'editor',
+                'thumbnail',
+                'excerpt',
+                'trackbacks',
+                'custom-fields',
+                'comments',
+                'revisions',
+                'author',
+                'page-attributes',
+                'post-formats'
+            ],
+            'taxonomies'          => [
+                'bsacc_status',
+                'category',
+                'post_tag'
+            ],
+        ];
+
+        // Apply a filter to arguments for customization.
+        $options = apply_filters( 'bsacc_forsale_args', $options );
+
+        /**
+         * Register the post type
+         */
+        register_post_type(
+            'bsacc_forsale',
             $options
         );
 
@@ -155,4 +233,4 @@ final class Post_Types_Register {
 }
 
 // Run the class.
-$bsacc_post_types = new Post_Types_Register;
+$bsacc_forsales = new Post_Types_Register;
