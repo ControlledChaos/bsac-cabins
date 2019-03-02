@@ -305,43 +305,6 @@ function bsacc_deactivate_plugin() {
 }
 
 /**
- * Check if WordPress is 5.0 or greater.
- *
- * @since  1.0.0
- * @access public
- * @return bool Returns true if the WordPress version is 5.0 or greater.
- */
-function bsacc_new_cms() {
-
-	// Get the WordPress version.
-	$version = get_bloginfo( 'version' );
-
-	if ( $version >= 5.0 ) {
-		return true;
-	} else {
-		return false;
-	}
-
-}
-
-/**
- * Check if the CMS is ClassicPress.
- *
- * @since  1.0.0
- * @access public
- * @return bool Returns true if ClassicPress is running.
- */
-function bsacc_classicpress() {
-
-	if ( function_exists( 'classicpress_version' ) ) {
-		return true;
-	} else {
-		return false;
-	}
-
-}
-
-/**
  * Check for Advanced Custom Fields.
  *
  * @since  1.0.0
@@ -392,5 +355,29 @@ function bsacc_acf_options() {
 	} else {
 		return false;
 	}
+
+}
+
+/**
+ * Add an admin error notice if Advanced Custom Fields Pro is not active.
+ *
+ * @since  1.0.0
+ * @return void
+ */
+if ( ! bsacc_acf_pro() ) {
+
+	add_action( 'admin_notices', 'bsacc_acf_notice' );
+
+}
+
+/**
+ * Get the Advanced Custom Fields Pro admin notice output.
+ *
+ * @since  1.0.0
+ * @return void
+ */
+function bsacc_acf_notice() {
+
+	require_once plugin_dir_path( __FILE__ ) . 'includes/partials/acf-notice.php';
 
 }

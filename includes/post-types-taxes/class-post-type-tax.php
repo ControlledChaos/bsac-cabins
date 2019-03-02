@@ -79,18 +79,6 @@ class Post_Types_Taxes {
 		// Functions related to post types and taxonomies.
 		require_once BSACC_PATH . 'includes/post-types-taxes/class-post-type-tax-functions.php';
 
-		// Post types query on the blog front page.
-		require_once BSACC_PATH . 'includes/post-types-taxes/class-post-type-front-page.php';
-
-		// Number of posts per archive page.
-		require_once BSACC_PATH . 'includes/post-types-taxes/class-posts-per-page.php';
-
-		// Drag & drop custom post and taxonomy orders.
-		require_once BSACC_PATH . 'includes/post-types-taxes/class-post-type-order.php';
-
-		// Capability to add custom taxonomy templates.
-		require_once BSACC_PATH . 'includes/post-types-taxes/class-taxonomy-templates.php';
-
 	}
 
 }

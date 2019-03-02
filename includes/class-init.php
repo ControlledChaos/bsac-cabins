@@ -16,6 +16,10 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
+if ( ! bsacc_acf_pro() ) {
+	return;
+}
+
 // Get plugins path to check for active plugins.
 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
