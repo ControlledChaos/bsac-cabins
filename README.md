@@ -13,4 +13,4 @@ This plugin provides custom post types with custom fields for documenting the ca
 
 ## Compatibility
 
-The plugin runs on both ClassicPress and WordPress. The custom fields for post edit forms are served by Advanced Custom Fields. Some of the fields are only available with the premium version so the [Advanced Custom Fields PRO](https://www.advancedcustomfields.com/pro/) plugin is required for this plugin to take effect.
+The plugin runs on both ClassicPress and WordPress. The custom fields for post edit forms are served by Advanced Custom Fields. Some of the fields are only available with the premium version so the [Advanced Custom Fields Pro](https://www.advancedcustomfields.com/pro/) plugin is required for this plugin to take effect.
