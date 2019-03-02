@@ -85,7 +85,7 @@ class Fields_For_Sale {
 				'key'    => 'group_55dbf67363475',
 				'title'  => __( 'Cabins For Sale', 'bsac-cabins' ),
 				'fields' => [
-					array(
+					[
 						'key'               => 'field_567efb04de2b6',
 						'label'             => __( 'Info', 'bsac-cabins' ),
 						'name'              => '',
@@ -93,15 +93,15 @@ class Fields_For_Sale {
 						'instructions'      => __( '', 'bsac-cabins' ),
 						'required'          => 0,
 						'conditional_logic' => 0,
-						'wrapper'           => array(
+						'wrapper'           => [
 							'width' => '',
 							'class' => '',
 							'id'    => '',
-						),
+						],
 						'placement' => 'top',
 						'endpoint'  => 0,
-					),
-					array(
+					],
+					[
 						'key'               => 'field_55dc0dbb8e321',
 						'label'             => __( 'Cabin Number', 'bsac-cabins' ),
 						'name'              => 'cabin_number_sale',
@@ -109,11 +109,11 @@ class Fields_For_Sale {
 						'instructions'      => __( '', 'bsac-cabins' ),
 						'required'          => 1,
 						'conditional_logic' => 0,
-						'wrapper'           => array(
-							'width' => 50,
+						'wrapper'           => [
+							'width' => '',
 							'class' => '',
 							'id'    => '',
-						),
+						],
 						'default_value'     => '',
 						'placeholder'       => __( '', 'bsac-cabins' ),
 						'prepend'           => '',
@@ -123,8 +123,8 @@ class Fields_For_Sale {
 						'step'              => '',
 						'readonly'          => 0,
 						'disabled'          => 0,
-					),
-					array(
+					],
+					[
 						'key'               => 'field_55dc0ffa344b7',
 						'label'             => __( 'Cabin Location', 'bsac-cabins' ),
 						'name'              => 'cabin_location',
@@ -132,21 +132,20 @@ class Fields_For_Sale {
 						'instructions'      => __( '', 'bsac-cabins' ),
 						'required'          => 1,
 						'conditional_logic' => 0,
-						'wrapper'           => array(
-							'width' => '50',
+						'wrapper'           => [
+							'width' => '',
 							'class' => 'cabin-location',
 							'id'    => '',
-						),
-						'choices'           => array(
+						],
+						'choices'           => [
 							'main'   => __( 'Main Canyon', 'bsac-cabins' ),
 							'east'   => __( 'Main Canyon/East Fork', 'bsac-cabins' ),
 							'first'  => __( 'First Water', 'bsac-cabins' ),
 							'winter' => __( 'Winter Creek', 'bsac-cabins' ),
 							'spruce' => __( 'Spruce Grove', 'bsac-cabins' ),
 							'other'  => __( 'Other', 'bsac-cabins' ),
-						),
-						'default_value'     => array(
-						),
+						],
+						'default_value'     => [],
 						'allow_null'        => 0,
 						'multiple'          => 0,
 						'ui'                => 0,
@@ -155,28 +154,28 @@ class Fields_For_Sale {
 						'disabled'          => 0,
 						'readonly'          => 0,
 						'return_format'     => 'value',
-					),
-					array(
+					],
+					[
 						'key'               => 'field_55dc10d0344b8',
 						'label'             => __( 'Other Cabin Location', 'bsac-cabins' ),
 						'name'              => 'other_cabin_location',
 						'type'              => 'text',
 						'instructions'      => __( '', 'bsac-cabins' ),
 						'required'          => 0,
-						'conditional_logic' => array(
-							array(
-								array(
+						'conditional_logic' => [
+							[
+								[
 									'field'    => 'field_55dc0ffa344b7',
 									'operator' => '==',
 									'value'    => 'other',
-								),
-							),
-						),
-						'wrapper'           => array(
+								],
+							],
+						],
+						'wrapper'           => [
 							'width' => '',
 							'class' => '',
 							'id'    => '',
-						),
+						],
 						'default_value'     => '',
 						'placeholder'       => __( 'Chantry Flat, Above the Falls, Roberts Camp...', 'bsac-cabins' ),
 						'prepend'           => '',
@@ -184,8 +183,30 @@ class Fields_For_Sale {
 						'maxlength'         => '',
 						'readonly'          => 0,
 						'disabled'          => 0,
-					),
-					array(
+					],
+					[
+						'key'               => 'field_5c7af0827cdf2',
+						'label'             => 'Cabin Status',
+						'name'              => 'cabin_sale_status',
+						'type'              => 'taxonomy',
+						'instructions'      => '',
+						'required'          => 1,
+						'conditional_logic' => 0,
+						'wrapper'           => [
+							'width' => '',
+							'class' => '',
+							'id'    => '',
+						],
+						'taxonomy'          => 'bsacc_status',
+						'field_type'        => 'select',
+						'allow_null'        => 0,
+						'add_term'          => 0,
+						'save_terms'        => 1,
+						'load_terms'        => 1,
+						'return_format'     => 'id',
+						'multiple'          => 0,
+					],
+					[
 						'key'               => 'field_55dc11b33a5ad',
 						'label'             => __( 'Cabin Description', 'bsac-cabins' ),
 						'name'              => 'cabin_description_sale',
@@ -193,18 +214,18 @@ class Fields_For_Sale {
 						'instructions'      => $cabin_desc_instr,
 						'required'          => 0,
 						'conditional_logic' => 0,
-						'wrapper'           => array(
+						'wrapper'           => [
 							'width' => '',
 							'class' => '',
 							'id'    => '',
-						),
+						],
 						'default_value'     => '',
 						'tabs'              => 'all',
 						'toolbar'           => 'basic',
 						'media_upload'      => 0,
 						'delay'             => 0,
-					),
-					array(
+					],
+					[
 						'key'               => 'field_567efb1ade2b7',
 						'label'             => __( 'Price & Terms', 'bsac-cabins' ),
 						'name'              => '',
@@ -212,15 +233,15 @@ class Fields_For_Sale {
 						'instructions'      => __( '', 'bsac-cabins' ),
 						'required'          => 0,
 						'conditional_logic' => 0,
-						'wrapper'           => array(
+						'wrapper'           => [
 							'width' => '',
 							'class' => '',
 							'id'    => '',
-						),
+						],
 						'placement'         => 'top',
 						'endpoint'          => 0,
-					),
-					array(
+					],
+					[
 						'key'               => 'field_55dc0e1d8e322',
 						'label'             => __( 'Cabin Price', 'bsac-cabins' ),
 						'name'              => 'cabin_price',
@@ -228,11 +249,11 @@ class Fields_For_Sale {
 						'instructions'      => __( '', 'bsac-cabins' ),
 						'required'          => 1,
 						'conditional_logic' => 0,
-						'wrapper'           => array(
+						'wrapper'           => [
 							'width' => 50,
 							'class' => '',
 							'id'    => '',
-						),
+						],
 						'default_value'     => '',
 						'placeholder'       => __( '40,000', 'bsac-cabins' ),
 						'prepend'           => '$',
@@ -240,8 +261,8 @@ class Fields_For_Sale {
 						'maxlength'         => '',
 						'readonly'          => 0,
 						'disabled'          => 0,
-					),
-					array(
+					],
+					[
 						'key'               => 'field_55dc0f168e324',
 						'label'             => __( 'Price Flexibility', 'bsac-cabins' ),
 						'name'              => 'price_flexibility',
@@ -249,19 +270,18 @@ class Fields_For_Sale {
 						'instructions'      => __( '', 'bsac-cabins' ),
 						'required'          => 0,
 						'conditional_logic' => 0,
-						'wrapper'           => array(
+						'wrapper'           => [
 							'width' => 50,
 							'class' => '',
 							'id'    => '',
-						),
-						'choices'           => array(
+						],
+						'choices'           => [
 							'none'    => __( 'Not Specified', 'bsac-cabins' ),
 							'asking'  => __( 'Asking', 'bsac-cabins' ),
 							'firm'    => __( 'Firm', 'bsac-cabins' ),
 							'reduced' => __( 'Reduced', 'bsac-cabins' ),
-						),
-						'default_value'     => array(
-						),
+						],
+						'default_value'     => [],
 						'allow_null'        => 1,
 						'multiple'          => 0,
 						'ui'                => 0,
@@ -270,8 +290,8 @@ class Fields_For_Sale {
 						'disabled'          => 0,
 						'readonly'          => 0,
 						'return_format'     => 'value',
-					),
-					array(
+					],
+					[
 						'key'               => 'field_55dc0e5c8e323',
 						'label'             => __( 'SOLD!', 'bsac-cabins' ),
 						'name'              => 'mark_sold',
@@ -279,23 +299,22 @@ class Fields_For_Sale {
 						'instructions'      => __( '', 'bsac-cabins' ),
 						'required'          => 0,
 						'conditional_logic' => 0,
-						'wrapper'           => array(
+						'wrapper'           => [
 							'width' => '',
 							'class' => '',
 							'id'    => '',
-						),
-						'choices'           => array(
+						],
+						'choices'           => [
 							'sold' => __( 'This cabin has been sold', 'bsac-cabins' ),
-						),
-						'default_value'     => array(
-						),
+						],
+						'default_value'     => [],
 						'layout'            => 'vertical',
 						'toggle'            => 0,
 						'allow_custom'      => 0,
 						'save_custom'       => 0,
 						'return_format'     => 'value',
-					),
-					array(
+					],
+					[
 						'key'               => 'field_55dc11d43a5ae',
 						'label'             => __( 'What\'s Included', 'bsac-cabins' ),
 						'name'              => 'cabin_includes',
@@ -303,18 +322,18 @@ class Fields_For_Sale {
 						'instructions'      => __( 'List any furniture, appliances, tools, memorabilia, etc. that is included in the cabin sale.', 'bsac-cabins' ),
 						'required'          => 0,
 						'conditional_logic' => 0,
-						'wrapper'           => array(
+						'wrapper'           => [
 							'width' => '',
 							'class' => '',
 							'id'    => '',
-						),
+						],
 						'default_value'     => '',
 						'tabs'              => 'all',
 						'toolbar'           => 'basic',
 						'media_upload'      => 0,
 						'delay'             => 0,
-					),
-					array(
+					],
+					[
 						'key'               => 'field_567efb31de2b8',
 						'label'             => __( 'Map & Directions', 'bsac-cabins' ),
 						'name'              => '',
@@ -322,15 +341,15 @@ class Fields_For_Sale {
 						'instructions'      => __( '', 'bsac-cabins' ),
 						'required'          => 0,
 						'conditional_logic' => 0,
-						'wrapper'           => array(
+						'wrapper'           => [
 							'width' => '',
 							'class' => '',
 							'id'    => '',
-						),
+						],
 						'placement'         => 'top',
 						'endpoint'          => 0,
-					),
-					array(
+					],
+					[
 						'key'               => 'field_55dc125343c65',
 						'label'             => __( 'Map Code', 'bsac-cabins' ),
 						'name'              => 'cabin_map_sale',
@@ -338,18 +357,18 @@ class Fields_For_Sale {
 						'instructions'      => __( 'Enter a map embed code.', 'bsac-cabins' ),
 						'required'          => 0,
 						'conditional_logic' => 0,
-						'wrapper'           => array(
+						'wrapper'           => [
 							'width' => '',
 							'class' => '',
 							'id'    => '',
-						),
+						],
 						'default_value'     => '',
 						'placeholder'       => '[put_wpgm id=1]',
 						'prepend'           => '',
 						'append'            => '',
 						'maxlength'         => '',
-					),
-					array(
+					],
+					[
 						'key'               => 'field_55dc120643c64',
 						'label'             => __( 'Directions to Cabin', 'bsac-cabins' ),
 						'name'              => 'cabin_directions_sale',
@@ -357,11 +376,11 @@ class Fields_For_Sale {
 						'instructions'      => __( '', 'bsac-cabins' ),
 						'required'          => 0,
 						'conditional_logic' => 0,
-						'wrapper'           => array(
+						'wrapper'           => [
 							'width' => '',
 							'class' => '',
 							'id'    => '',
-						),
+						],
 						'default_value'     => '',
 						'placeholder'       => __( '', 'bsac-cabins' ),
 						'maxlength'         => '',
@@ -369,8 +388,8 @@ class Fields_For_Sale {
 						'new_lines'         => 'wpautop',
 						'readonly'          => 0,
 						'disabled'          => 0,
-					),
-					array(
+					],
+					[
 						'key'               => 'field_567efc2cde2bb',
 						'label'             => __( 'Display', 'bsac-cabins' ),
 						'name'              => '',
@@ -378,15 +397,15 @@ class Fields_For_Sale {
 						'instructions'      => __( '', 'bsac-cabins' ),
 						'required'          => 0,
 						'conditional_logic' => 0,
-						'wrapper'           => array(
+						'wrapper'           => [
 							'width' => '',
 							'class' => '',
 							'id'    => '',
-						),
+						],
 						'placement'         => 'top',
 						'endpoint'          => 0,
-					),
-					array(
+					],
+					[
 						'key'               => 'field_567efb7bde2b9',
 						'label'             => __( 'Add Video?', 'bsac-cabins' ),
 						'name'              => 'cabin_video_sale',
@@ -394,42 +413,42 @@ class Fields_For_Sale {
 						'instructions'      => __( '', 'bsac-cabins' ),
 						'required'          => 0,
 						'conditional_logic' => 0,
-						'wrapper'           => array(
+						'wrapper'           => [
 							'width' => '',
 							'class' => '',
 							'id'    => '',
-						),
+						],
 						'message'           => __( 'Check to embed a video', 'bsac-cabins' ),
 						'default_value'     => 0,
 						'ui'                => 0,
 						'ui_on_text'        => '',
 						'ui_off_text'       => '',
-					),
-					array(
+					],
+					[
 						'key'               => 'field_567efbcade2ba',
 						'label'             => __( 'Cabin Video', 'bsac-cabins' ),
 						'name'              => 'cabin_video_sale',
 						'type'              => 'oembed',
 						'instructions'      => __( 'Paste the URL of the video (i.e. YouTube or Vimeo)', 'bsac-cabins' ),
 						'required'          => 0,
-						'conditional_logic' => array(
-							array(
-								array(
+						'conditional_logic' => [
+							[
+								[
 									'field'    => 'field_567efb7bde2b9',
 									'operator' => '==',
 									'value'    => '1',
-								),
-							),
-						),
-						'wrapper'           => array(
+								],
+							],
+						],
+						'wrapper'           => [
 							'width' => '',
 							'class' => '',
 							'id'    => '',
-						),
+						],
 						'width'             => '',
 						'height'            => '',
-					),
-					array(
+					],
+					[
 						'key'               => 'field_55dc12e143c66',
 						'label'             => __( 'Featured Image', 'bsac-cabins' ),
 						'name'              => 'cabin_sale_featured_image',
@@ -437,11 +456,11 @@ class Fields_For_Sale {
 						'instructions'      => __( 'This will be used in the post as well as in feeds and when sharing on social sites.', 'bsac-cabins' ),
 						'required'          => 0,
 						'conditional_logic' => 0,
-						'wrapper'           => array(
+						'wrapper'           => [
 							'width' => '',
 							'class' => '',
 							'id'    => '',
-						),
+						],
 						'return_format'     => 'url',
 						'preview_size'      => 'medium',
 						'library'           => 'all',
@@ -452,8 +471,8 @@ class Fields_For_Sale {
 						'max_height'        => '',
 						'max_size'          => '',
 						'mime_types'        => 'jpg,jpeg,png',
-					),
-					array(
+					],
+					[
 						'key'               => 'field_55dc133043c67',
 						'label'             => __( 'Cabin Gallery', 'bsac-cabins' ),
 						'name'              => 'cabin_gallery_sale',
@@ -461,11 +480,11 @@ class Fields_For_Sale {
 						'instructions'      => __( 'Photo gallery of the cabin', 'bsac-cabins' ),
 						'required'          => 0,
 						'conditional_logic' => 0,
-						'wrapper'           => array(
+						'wrapper'           => [
 							'width' => '',
 							'class' => '',
 							'id'    => '',
-						),
+						],
 						'min'               => '',
 						'max'               => '',
 						'preview_size'      => 'thumbnail',
@@ -478,8 +497,8 @@ class Fields_For_Sale {
 						'max_size'          => '',
 						'mime_types'        => 'jpg,jpeg,png',
 						'insert'            => 'append',
-					),
-					array(
+					],
+					[
 						'key'               => 'field_567efc56de2bc',
 						'label'             => __( 'Contact', 'bsac-cabins' ),
 						'name'              => '',
@@ -487,15 +506,15 @@ class Fields_For_Sale {
 						'instructions'      => __( '', 'bsac-cabins' ),
 						'required'          => 0,
 						'conditional_logic' => 0,
-						'wrapper'           => array(
+						'wrapper'           => [
 							'width' => '',
 							'class' => '',
 							'id'    => '',
-						),
+						],
 						'placement'         => 'top',
 						'endpoint'          => 0,
-					),
-					array(
+					],
+					[
 						'key'               => 'field_55dc13d958a3c',
 						'label'             => __( 'Contact Information', 'bsac-cabins' ),
 						'name'              => 'contact_info_sale',
@@ -503,11 +522,11 @@ class Fields_For_Sale {
 						'instructions'      => __( '', 'bsac-cabins' ),
 						'required'          => 0,
 						'conditional_logic' => 0,
-						'wrapper'           => array(
+						'wrapper'           => [
 							'width' => '',
 							'class' => '',
 							'id'    => '',
-						),
+						],
 						'default_value'     => '',
 						'placeholder'       => __( '', 'bsac-cabins' ),
 						'maxlength'         => '',
@@ -515,8 +534,8 @@ class Fields_For_Sale {
 						'new_lines'         => 'wpautop',
 						'readonly'          => 0,
 						'disabled'          => 0,
-					),
-					array(
+					],
+					[
 						'key'               => 'field_59593462829aa',
 						'label'             => __( 'Contact Form', 'bsac-cabins' ),
 						'name'              => 'sac_cabin_contact_form',
@@ -524,17 +543,17 @@ class Fields_For_Sale {
 						'instructions'      => __( 'Paste in the shortcode for a contact form.', 'bsac-cabins' ),
 						'required'          => 0,
 						'conditional_logic' => 0,
-						'wrapper'           => array(
+						'wrapper'           => [
 							'width' => '',
 							'class' => '',
 							'id'    => '',
-						),
+						],
 						'default_value'     => '',
 						'placeholder'       => __( '', 'bsac-cabins' ),
 						'prepend'           => '',
 						'append'            => '',
 						'maxlength'         => '',
-					),
+					],
 				],
 				'location' => [
 					[
@@ -551,20 +570,14 @@ class Fields_For_Sale {
 				'label_placement'       => 'top',
 				'instruction_placement' => 'label',
 				'hide_on_screen'        => [
-					0  => 'permalink',
-					1  => 'the_content',
-					2  => 'excerpt',
-					3  => 'discussion',
-					4  => 'comments',
-					5  => 'revisions',
-					6  => 'slug',
-					7  => 'author',
-					8  => 'format',
-					9  => 'page_attributes',
-					10 => 'featured_image',
-					11 => 'categories',
-					12 => 'tags',
-					13 => 'send-trackbacks',
+					0 => 'the_content',
+					1 => 'discussion',
+					2 => 'comments',
+					3 => 'revisions',
+					4 => 'slug',
+					5 => 'author',
+					6 => 'format',
+					7 => 'send-trackbacks',
 				],
 				'active'      => true,
 				'description' => __( 'For the Cabins For Sale post type.', 'bsac-cabins' ),
