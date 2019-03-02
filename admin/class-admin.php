@@ -79,8 +79,8 @@ class Admin {
 	 */
 	private function dependencies() {
 
-		// The core settings class for the plugin.
-		// require_once BSACC_PATH . 'admin/class-settings.php';
+		// The ACF fields for cabins for sale.
+		require_once BSACC_PATH . 'admin/class-fields-for-sale.php';
 
 		// Add icons to the titles of ACF tab and accordion fields, if active.
 		if ( bsacc_acf_pro() && ! get_option( 'bsacc_acf_activate_settings_page' ) ) {
