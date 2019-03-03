@@ -19,7 +19,7 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 /**
- * Admin functiontionality and settings.
+ * ACF fields for cabins for sale
  *
  * @since  1.0.0
  * @access public
@@ -43,7 +43,7 @@ class Fields_For_Sale {
 			// Set variable for new instance.
 			$instance = new self;
 
-			// Require the class files.
+			// Register the fields.
 			$instance->fields();
 
 		}
@@ -64,7 +64,7 @@ class Fields_For_Sale {
 	public function __construct() {}
 
 	/**
-	 * Class dependency files.
+	 * Register the fields
 	 *
 	 * @since  1.0.0
 	 * @access private
@@ -111,7 +111,7 @@ class Fields_For_Sale {
 						'conditional_logic' => 0,
 						'wrapper'           => [
 							'width' => '',
-							'class' => '',
+							'class' => 'fields-three-wide',
 							'id'    => '',
 						],
 						'default_value'     => '',
@@ -134,7 +134,7 @@ class Fields_For_Sale {
 						'conditional_logic' => 0,
 						'wrapper'           => [
 							'width' => '',
-							'class' => 'cabin-location',
+							'class' => 'fields-three-wide',
 							'id'    => '',
 						],
 						'choices'           => [
@@ -194,7 +194,7 @@ class Fields_For_Sale {
 						'conditional_logic' => 0,
 						'wrapper'           => [
 							'width' => '',
-							'class' => '',
+							'class' => 'fields-three-wide',
 							'id'    => '',
 						],
 						'taxonomy'          => 'bsacc_status',
