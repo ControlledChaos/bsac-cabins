@@ -82,6 +82,11 @@ class Admin {
 		// The ACF fields for cabins for sale.
 		require_once BSACC_PATH . 'admin/class-fields-for-sale.php';
 
+		// Stop here if not in the back end.
+		if ( ! is_admin() ) {
+			return;
+		}
+
 		// Add icons to the titles of ACF tab and accordion fields, if active.
 		if ( bsacc_acf_pro() && ! get_option( 'bsacc_acf_activate_settings_page' ) ) {
 			// include_once BSACC_PATH . 'admin/class-acf-tab-icons.php';
