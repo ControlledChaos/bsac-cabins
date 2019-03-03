@@ -12,6 +12,10 @@
   clear: none;
 }
 
+.for-sale-meta-description {
+  width: 100%;
+}
+
 @media screen and (max-width: 782px) {
   .acf-fields .fields-three-wide {
     width: 100%;

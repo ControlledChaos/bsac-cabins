@@ -68,6 +68,12 @@ class Admin {
 		// Enqueue the JavaScript for the admin area.
 		add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
 
+		// Replace default post title placeholders.
+		add_filter( 'enter_title_here', [ $this, 'title_placeholders' ] );
+
+		//
+		add_action( 'add_meta_boxes', [ $this, 'customize_metaboxes' ], 10, 2 );
+
 	}
 
 	/**
@@ -128,6 +134,90 @@ class Admin {
 
 		// Enqueue scripts for backend functionality of this plugin.
 		wp_enqueue_script( BSACC_ADMIN_SLUG . '-admin', BSACC_URL . 'admin/assets/js/admin.js', [ 'jquery' ], BSACC_VERSION, true );
+
+	}
+
+	/**
+     * Replace default post title placeholders.
+     *
+     * @since  1.0.0
+	 * @access public
+     * @param  object $title Stores the 'Enter title here" placeholder.
+	 * @return object Returns the title placeholder.
+     * @throws Non-Object Throws an error on attachment edit screens since
+     *         there is no placeholder, so that post type is nullified.
+     */
+    public function title_placeholders( $title ) {
+
+        // Get the current screen as a variable.
+        $screen = get_current_screen();
+
+        // Post type: post.
+        if ( 'bsacc_forsale' == $screen->post_type ) {
+            $post_title = esc_html__( 'Enter cabin number for admin purposes', 'bsac-cabins' );
+
+        // Post type: attachment.
+        } elseif ( $screen->post_type == 'attachment' ) {
+            $post_title = null;
+
+        // Post type: custom, unidentified.
+        } else {
+            $post_title = esc_html__( 'Enter Title', 'bsac-cabins' );
+        }
+
+        // Apply a filter conditional modification.
+        $title = apply_filters( 'bsac_cabins_post_title_placeholders', $post_title );
+
+        // Return the new placeholder.
+        return $title;
+
+	}
+
+	/**
+	 * Customize post meta boxes
+	 *
+	 * Used on post type edit pages.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @param  object $post Gets the post object.
+	 * @param  string $post_type Gets the post type.
+	 * @global array $wp_meta_boxes Holds all the widgets for wp-admin
+	 */
+	function customize_metaboxes( $post_type, $post ) {
+
+		// Access global variables.
+		global $wp_meta_boxes;
+
+		/**
+		 * Post excerpt in cabins for sale edit pages.
+		 *
+		 * @see bsacc_forsale
+		 */
+
+		// Screen reader title for toggle button.
+		$wp_meta_boxes['bsacc_forsale']['normal']['core']['postexcerpt']['title'] = __( 'Cabin Summary', 'bsac-cabins' );
+
+		// Meta box ID for toggling.
+		$wp_meta_boxes['bsacc_forsale']['normal']['core']['postexcerpt']['id'] = 'for-sale-meta-box';
+
+		// Callback function for meta box output.
+		$wp_meta_boxes['bsacc_forsale']['normal']['core']['postexcerpt']['callback'] = [ $this, 'for_sale_excerpt_meta_box' ];
+	}
+
+	/**
+	 * Excerpt meta box output
+	 *
+	 * For cabins for sale admin pages.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @param  object $post Gets the post object.
+	 */
+	function for_sale_excerpt_meta_box( $post ) {
+
+		// Get the HTML for the meta box content.
+		require BSACC_PATH . 'admin/partials/for-sale-excerpt-meta-box.php';
 
 	}
 
