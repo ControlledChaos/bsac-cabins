@@ -55,16 +55,16 @@ class Frontend {
 	 * Constructor method
 	 *
 	 * @since  1.0.0
-	 * @access public
+	 * @access private
 	 * @return self
 	 */
-	public function __construct() {
+	private function __construct() {
 
 		// Enqueue the stylesheets for the front end.
-		add_action( 'enqueue_scripts', [ $this, 'enqueue_styles' ] );
+		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_styles' ] );
 
 		// Enqueue the JavaScript for the front end.
-		add_action( 'enqueue_scripts', [ $this, 'enqueue_scripts' ] );
+		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
 
 	}
 
@@ -72,10 +72,10 @@ class Frontend {
 	 * Frontend dependencies
 	 *
 	 * @since  1.0.0
-	 * @access public
+	 * @access private
 	 * @return void
 	 */
-	public function dependencies() {
+	private function dependencies() {
 
 		// The frontend content filters for post types.
 		require_once BSACC_PATH . 'frontend/class-content-filters.php';
@@ -91,11 +91,7 @@ class Frontend {
 	 */
 	public function enqueue_styles() {
 
-		/**
-		 * Enqueue the front end styles.
-		 *
-		 * @since 1.0.0
-		 */
+		// Enqueue the front end styles.
 		wp_enqueue_style( BSACC_ADMIN_SLUG . '-frontend', BSACC_URL . 'frontend/assets/css/frontend.min.css', [], BSACC_VERSION, 'all' );
 
 	}
@@ -109,7 +105,7 @@ class Frontend {
 	 */
 	public function enqueue_scripts() {
 
-		// Enqueue scripts for backend functionality of this plugin.
+		// Enqueue scripts for front end functionality of this plugin.
 		wp_enqueue_script( BSACC_ADMIN_SLUG . '-frontend', BSACC_URL . 'frontend/assets/js/frontend.min.js', [ 'jquery' ], BSACC_VERSION, true );
 
 	}
