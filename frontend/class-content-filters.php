@@ -78,7 +78,7 @@ class Content_Filters {
 	public function for_sale_archive_filter( $content ) {
 
 		// Return the default content if not cabins for sale.
-		if ( ! is_post_type_archive( 'bsacc_forsale' ) ) {
+		if ( ! ( is_post_type_archive( 'bsacc_forsale' ) || is_tax( 'bsacc_status' ) ) ) {
 			return $content;
 		}
 
