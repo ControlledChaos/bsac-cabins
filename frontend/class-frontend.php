@@ -1,6 +1,6 @@
 <?php
 /**
- * The frontend functionality of the plugin.
+ * The frontend functionality of the plugin
  *
  * @package    Big_Santa_Anita_Canyon_Cabins
  * @subpackage Frontend
@@ -17,7 +17,7 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 /**
- * The frontend functionality of the plugin.
+ * The frontend functionality of the plugin
  *
  * @since  1.0.0
  * @access public
@@ -42,7 +42,7 @@ class Frontend {
 			$instance = new self;
 
 			// Frontend dependencies
-			// $instance->dependencies();
+			$instance->dependencies();
 
 		}
 
@@ -75,7 +75,12 @@ class Frontend {
 	 * @access public
 	 * @return void
 	 */
-	public function dependencies() {}
+	public function dependencies() {
+
+		// The frontend content filters for post types.
+		require_once BSACC_PATH . 'frontend/class-content-filters.php';
+
+	}
 
 	/**
 	 * Enqueue the stylesheets for the front end.
