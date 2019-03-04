@@ -71,8 +71,8 @@ class Admin {
 		// Replace default post title placeholders.
 		add_filter( 'enter_title_here', [ $this, 'title_placeholders' ] );
 
-		//
-		add_action( 'add_meta_boxes', [ $this, 'customize_metaboxes' ], 10, 2 );
+		// Customize post meta boxes.
+		// add_action( 'add_meta_boxes', [ $this, 'customize_metaboxes' ], 10, 2 );
 
 	}
 
@@ -184,7 +184,7 @@ class Admin {
 	 * @param  string $post_type Gets the post type.
 	 * @global array $wp_meta_boxes Holds all the widgets for wp-admin
 	 */
-	function customize_metaboxes( $post_type, $post ) {
+	public function customize_metaboxes( $post_type, $post ) {
 
 		// Access global variables.
 		global $wp_meta_boxes;
@@ -214,7 +214,7 @@ class Admin {
 	 * @access public
 	 * @param  object $post Gets the post object.
 	 */
-	function for_sale_excerpt_meta_box( $post ) {
+	public function for_sale_excerpt_meta_box( $post ) {
 
 		// Get the HTML for the meta box content.
 		require BSACC_PATH . 'admin/partials/for-sale-excerpt-meta-box.php';
