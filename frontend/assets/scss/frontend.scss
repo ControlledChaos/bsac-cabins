@@ -2,3 +2,20 @@
  * Fontend styles.
  */
 
+.bsac-cabins-archive {
+	box-sizing: border-box;
+	display: flex;
+	padding: 1em 0;
+
+	* {
+		box-sizing: border-box;
+	}
+}
+
+.bsac-cabins-archive.cabin-has-image {
+
+	.bsac-cabins-archive-image {
+		min-width: 320px;
+		padding: 0 0 1em 1em;
+	}
+}
