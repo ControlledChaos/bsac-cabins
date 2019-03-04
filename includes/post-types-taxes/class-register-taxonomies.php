@@ -86,13 +86,13 @@ final class Taxes_Register {
             'show_in_nav_menus'  => true,
             'query_var'          => true,
             'rewrite'            => [
-                'slug'         => 'sale-status',
+                'slug'         => 'cabin-sale-status',
                 'with_front'   => true,
                 'hierarchical' => false,
             ],
             'show_admin_column'  => true,
             'show_in_rest'       => true,
-            'rest_base'          => 'sale-status',
+            'rest_base'          => 'cabin-sale-status',
             'show_in_quick_edit' => true
         ];
 
