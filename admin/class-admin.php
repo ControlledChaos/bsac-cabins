@@ -154,7 +154,7 @@ class Admin {
 
         // Post type: post.
         if ( 'bsacc_forsale' == $screen->post_type ) {
-            $post_title = esc_html__( 'Enter cabin number for admin purposes', 'bsac-cabins' );
+            $post_title = esc_html__( 'Enter "Cabin" plus cabin number', 'bsac-cabins' );
 
         // Post type: attachment.
         } elseif ( $screen->post_type == 'attachment' ) {
