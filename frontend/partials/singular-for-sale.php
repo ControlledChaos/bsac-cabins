@@ -209,6 +209,13 @@ $form = get_field( 'sac_cabin_contact_form' );
 	<?php if ( $map ) { echo do_shortcode( $map ); } ?>
 </div>
 <?php endif; ?>
+<?php if ( get_field( 'contact_info_sale' ) ) : ?>
+<div class="bsac-cabins-single-contact">
+	<h3><?php _e( 'Contact Information', 'bsac-cabins' ); ?></h3>
+	<?php echo get_field( 'contact_info_sale' ); ?>
+	<?php if ( $form ) { echo do_shortcode( $form ); } ?>
+</div>
+<?php endif; ?>
 <?php if ( get_field( 'cabin_video_sale' ) ) : ?>
 <div class="bsac-cabins-single-video">
 	<h3><?php _e( 'Cabin Video', 'bsac-cabins' ); ?></h3>
@@ -238,13 +245,5 @@ $form = get_field( 'sac_cabin_contact_form' );
         <?php endforeach; ?>
     </ul>
 	<?php endif; ?>
-</div>
-<?php endif; ?>
-<?php if ( get_field( 'contact_info_sale' ) ) : ?>
-<div class="bsac-cabins-single-contact">
-	<h3><?php _e( 'Contact Information', 'bsac-cabins' ); ?></h3>
-	<?php echo get_field( 'contact_info_sale' ); ?>
-	<?php if ( $form ) { echo do_shortcode( $form ); } ?>
-	<hr />
 </div>
 <?php endif; ?>
