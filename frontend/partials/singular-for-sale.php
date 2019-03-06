@@ -204,7 +204,7 @@ $form = get_field( 'sac_cabin_contact_form' );
 <?php endif; ?>
 <?php if ( get_field( 'cabin_directions_sale' ) ) : ?>
 <div class="bsac-cabins-single-includes">
-	<h3><?php _e( 'Map & Directions', 'bsac-cabins' ); ?></h3>
+	<h3><?php _e( 'Cabin Directions', 'bsac-cabins' ); ?></h3>
 	<?php echo get_field( 'cabin_directions_sale' ); ?>
 	<?php if ( $map ) { echo do_shortcode( $map ); } ?>
 </div>
