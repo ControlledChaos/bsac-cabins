@@ -2,8 +2,8 @@
 /**
  * Cabins for sale post type archive content
  *
- * @package    Mule_Plugin
- * @subpackage Includes\Post_Types_Taxes
+ * @package    Big_Santa_Anita_Canyon_Cabins
+ * @subpackage Frontend
  *
  * @since      1.0.0
  * @author     Greg Sweet <greg@ccdzine.com>
